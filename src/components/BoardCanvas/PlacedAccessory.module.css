@@ -1,0 +1,45 @@
+.item {
+  position: absolute;
+  border-radius: 5px;
+  border: 2px solid rgba(0,0,0,0.2);
+  cursor: grab;
+  touch-action: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  transition: box-shadow 0.1s, border-color 0.1s;
+  user-select: none;
+  overflow: hidden;
+}
+
+.item:hover {
+  border-color: rgba(0,0,0,0.4);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  z-index: 10;
+}
+
+.item.selected {
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 2px var(--color-accent), 0 2px 8px rgba(0,0,0,0.2);
+  z-index: 20;
+}
+
+.item.dragging {
+  opacity: 0.3;
+  z-index: 5;
+}
+
+.label {
+  font-size: 10px;
+  font-weight: 600;
+  color: rgba(0,0,0,0.55);
+  text-align: center;
+  padding: 2px;
+  line-height: 1.2;
+  pointer-events: none;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 100%;
+}

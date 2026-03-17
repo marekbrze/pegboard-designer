@@ -1,0 +1,39 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.board {
+  position: relative;
+  border-radius: 8px;
+  overflow: visible;
+}
+
+.backBadge {
+  font-size: 11px;
+  color: var(--color-muted);
+  background: #e0f0ff;
+  padding: 4px 10px;
+  border-radius: 6px;
+  border: 1px solid #b3d4f0;
+}
+
+.ghost {
+  position: absolute;
+  border-radius: 5px;
+  pointer-events: none;
+  z-index: 100;
+  border: 2px dashed;
+}
+
+.ghostValid {
+  background: rgba(34, 197, 94, 0.2);
+  border-color: #16a34a;
+}
+
+.ghostInvalid {
+  background: rgba(239, 68, 68, 0.15);
+  border-color: #dc2626;
+}
