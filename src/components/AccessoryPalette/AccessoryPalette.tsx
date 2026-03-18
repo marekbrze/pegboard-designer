@@ -17,10 +17,10 @@ export default function AccessoryPalette({ state, dispatch, drag, onPointerDown 
 
   return (
     <aside className={styles.root}>
-      <h2 className={styles.heading}>Akcesoria</h2>
+      <h2 className={styles.heading}>Accessories</h2>
 
       <section className={styles.section}>
-        <h3 className={styles.sectionTitle}>Standardowe IKEA</h3>
+        <h3 className={styles.sectionTitle}>Standard</h3>
         <div className={styles.list}>
           {builtins.map(def => (
             <PaletteItem
@@ -34,7 +34,7 @@ export default function AccessoryPalette({ state, dispatch, drag, onPointerDown 
       </section>
 
       <section className={styles.section}>
-        <h3 className={styles.sectionTitle}>Własne elementy</h3>
+        <h3 className={styles.sectionTitle}>Custom elements</h3>
         <div className={styles.list}>
           {customs.map(def => (
             <PaletteItem
@@ -50,7 +50,7 @@ export default function AccessoryPalette({ state, dispatch, drag, onPointerDown 
       </section>
 
       <div className={styles.hint}>
-        Przeciągnij element na tablicę
+        Drag an element onto the board
       </div>
     </aside>
   );

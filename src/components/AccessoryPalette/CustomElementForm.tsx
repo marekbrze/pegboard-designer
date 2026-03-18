@@ -37,7 +37,7 @@ export default function CustomElementForm({ dispatch }: Props) {
   if (!open) {
     return (
       <button className={styles.addBtn} onClick={() => setOpen(true)}>
-        + Dodaj własny element
+        + Add custom element
       </button>
     );
   }
@@ -46,14 +46,14 @@ export default function CustomElementForm({ dispatch }: Props) {
     <form className={styles.form} onSubmit={handleSubmit}>
       <input
         className={styles.input}
-        placeholder="Nazwa elementu"
+        placeholder="Element name"
         value={label}
         onChange={e => setLabel(e.target.value)}
         autoFocus
       />
       <div className={styles.dims}>
         <label className={styles.dimLabel}>
-          Szerokość
+          Width
           <input
             type="number" min={1} step={1} value={wMm}
             onChange={e => setWMm(Math.max(1, +e.target.value))}
@@ -62,7 +62,7 @@ export default function CustomElementForm({ dispatch }: Props) {
           <span className={styles.dimUnit}>mm</span>
         </label>
         <label className={styles.dimLabel}>
-          Wysokość
+          Height
           <input
             type="number" min={1} step={1} value={hMm}
             onChange={e => setHMm(Math.max(1, +e.target.value))}
@@ -72,10 +72,10 @@ export default function CustomElementForm({ dispatch }: Props) {
         </label>
       </div>
       <div className={styles.holesInfo}>
-        = {wHoles} × {hHoles} otworów
+        = {wHoles} × {hHoles} holes
       </div>
       <div className={styles.colorRow}>
-        <span className={styles.colorLabel}>Kolor</span>
+        <span className={styles.colorLabel}>Color</span>
         <div className={styles.colorSwatches}>
           {PRESET_COLORS.map(c => (
             <button
@@ -91,16 +91,16 @@ export default function CustomElementForm({ dispatch }: Props) {
             value={color}
             onChange={e => setColor(e.target.value)}
             className={styles.colorPicker}
-            title="Własny kolor"
+            title="Custom color"
           />
         </div>
       </div>
       <div className={styles.actions}>
         <button type="submit" className={styles.saveBtn} disabled={!label.trim()}>
-          Dodaj
+          Add
         </button>
         <button type="button" className={styles.cancelBtn} onClick={() => setOpen(false)}>
-          Anuluj
+          Cancel
         </button>
       </div>
     </form>

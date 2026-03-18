@@ -7,13 +7,13 @@ interface Props {
   dispatch: React.Dispatch<Action>;
 }
 
-const SIZES: BoardSize[] = ['36x56', '56x56', '76x56'];
+const SIZES: BoardSize[] = ['36x56', '56x56', '76x56', '56x37'];
 
 export default function BoardControls({ state, dispatch }: Props) {
   return (
     <div className={styles.root}>
       <div className={styles.group}>
-        <span className={styles.label}>Rozmiar tablicy</span>
+        <span className={styles.label}>Board size</span>
         <div className={styles.sizeButtons}>
           {SIZES.map(size => (
             <button
@@ -34,7 +34,7 @@ export default function BoardControls({ state, dispatch }: Props) {
             checked={state.doubleSided}
             onChange={e => dispatch({ type: 'SET_DOUBLE_SIDED', payload: e.target.checked })}
           />
-          <span>Dwustronna (stojąca)</span>
+          <span>Double-sided (standing)</span>
         </label>
       </div>
 
@@ -44,13 +44,13 @@ export default function BoardControls({ state, dispatch }: Props) {
             className={`${styles.tab} ${state.activeSide === 'front' ? styles.activeTab : ''}`}
             onClick={() => dispatch({ type: 'SET_ACTIVE_SIDE', payload: 'front' })}
           >
-            Przód
+            Front
           </button>
           <button
             className={`${styles.tab} ${state.activeSide === 'back' ? styles.activeTab : ''}`}
             onClick={() => dispatch({ type: 'SET_ACTIVE_SIDE', payload: 'back' })}
           >
-            Tył
+            Back
           </button>
         </div>
       )}

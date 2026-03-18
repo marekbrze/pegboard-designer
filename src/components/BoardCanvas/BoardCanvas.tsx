@@ -44,7 +44,7 @@ const BoardCanvas = forwardRef<HTMLDivElement, Props>(function BoardCanvas(
   return (
     <div className={styles.wrapper}>
       {isBack && (
-        <div className={styles.backBadge}>Tył (układ jak z przodu — nie lustrzany)</div>
+        <div className={styles.backBadge}>Back (same layout as front — not mirrored)</div>
       )}
       <div
         ref={ref}

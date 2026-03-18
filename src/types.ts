@@ -1,4 +1,4 @@
-export type BoardSize = '36x56' | '56x56' | '76x56';
+export type BoardSize = '36x56' | '56x56' | '76x56' | '56x37';
 export type Side = 'front' | 'back';
 
 export interface AccessoryDefinition {

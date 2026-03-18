@@ -25,14 +25,14 @@ export default function PaletteItem({ def, onRemove, onPointerDown, isDragging }
       />
       <div className={styles.info}>
         <span className={styles.name}>{def.label}</span>
-        <span className={styles.size}>{def.widthHoles}×{def.heightHoles} otw.</span>
+        <span className={styles.size}>{def.widthHoles}×{def.heightHoles} holes</span>
       </div>
       {onRemove && (
         <button
           className={styles.removeBtn}
           onPointerDown={e => e.stopPropagation()}
           onClick={onRemove}
-          title="Usuń typ"
+          title="Remove type"
         >×</button>
       )}
     </div>

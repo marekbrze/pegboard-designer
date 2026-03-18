@@ -16,7 +16,7 @@ export default function ExportBar({ state, dispatch }: Props) {
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url;
-    a.download = 'skadis-layout.json';
+    a.download = 'board-layout.json';
     a.click();
     URL.revokeObjectURL(url);
   }
@@ -31,10 +31,10 @@ export default function ExportBar({ state, dispatch }: Props) {
         if (parsed.boardSize && parsed.placed && parsed.accessories) {
           dispatch({ type: 'IMPORT_STATE', payload: parsed });
         } else {
-          alert('Nieprawidłowy plik konfiguracji');
+          alert('Invalid configuration file');
         }
       } catch {
-        alert('Błąd odczytu pliku');
+        alert('File read error');
       }
       e.target.value = '';
     };
@@ -46,7 +46,7 @@ export default function ExportBar({ state, dispatch }: Props) {
   return (
     <div className={styles.root}>
       <span className={styles.count}>
-        {itemCount} {itemCount === 1 ? 'element' : itemCount < 5 ? 'elementy' : 'elementów'} na tablicy
+        {itemCount} {itemCount === 1 ? 'item' : 'items'} on board
       </span>
       <div className={styles.actions}>
         <input
@@ -57,10 +57,10 @@ export default function ExportBar({ state, dispatch }: Props) {
           onChange={handleImport}
         />
         <button className={styles.btn} onClick={() => fileInputRef.current?.click()}>
-          Importuj JSON
+          Import JSON
         </button>
         <button className={`${styles.btn} ${styles.primary}`} onClick={handleExport}>
-          Eksportuj JSON
+          Export JSON
         </button>
       </div>
     </div>

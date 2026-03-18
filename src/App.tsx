@@ -102,7 +102,7 @@ export default function App() {
   return (
     <div className={styles.app}>
       <header className={styles.header}>
-        <h1 className={styles.title}>SKÅDIS Configurator</h1>
+        <h1 className={styles.title}>Board Configurator</h1>
         <BoardControls state={state} dispatch={dispatch} />
       </header>
 
