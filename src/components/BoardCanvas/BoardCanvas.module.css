@@ -2,38 +2,48 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 8px;
+  gap: 12px;
 }
 
 .board {
   position: relative;
-  border-radius: 8px;
+  border-radius: var(--radius-container);
   overflow: visible;
+  box-shadow: var(--shadow-extruded);
+  background: var(--color-bg);
 }
 
 .backBadge {
+  font-family: var(--font-display);
   font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
   color: var(--color-muted);
-  background: #e0f0ff;
-  padding: 4px 10px;
-  border-radius: 6px;
-  border: 1px solid #b3d4f0;
+  background: var(--color-bg);
+  padding: 6px 14px;
+  border-radius: var(--radius-base);
+  box-shadow: var(--shadow-extruded-sm);
 }
 
 .ghost {
   position: absolute;
-  border-radius: 5px;
+  border-radius: 8px;
   pointer-events: none;
   z-index: 100;
   border: 2px dashed;
 }
 
 .ghostValid {
-  background: rgba(34, 197, 94, 0.2);
-  border-color: #16a34a;
+  background: rgba(56, 178, 172, 0.15);
+  border-color: var(--color-accent-secondary);
+  box-shadow: var(--shadow-extruded-sm);
 }
 
 .ghostInvalid {
-  background: rgba(239, 68, 68, 0.15);
+  background: rgba(239, 68, 68, 0.12);
   border-color: #dc2626;
+  box-shadow: 
+    inset 4px 4px 8px rgba(220, 38, 38, 0.15),
+    inset -4px -4px 8px rgba(255, 255, 255, 0.3);
 }

@@ -2,43 +2,75 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 10px 20px;
-  border-top: 1.5px solid var(--color-border);
-  background: var(--color-surface);
-  gap: 12px;
+  padding: 14px 24px;
+  background: var(--color-bg);
+  box-shadow: var(--shadow-inset);
+  gap: 16px;
 }
 
 .count {
+  font-family: var(--font-display);
   font-size: 13px;
+  font-weight: 500;
   color: var(--color-muted);
 }
 
 .actions {
   display: flex;
-  gap: 8px;
+  gap: 10px;
 }
 
 .btn {
-  padding: 7px 16px;
-  border: 1.5px solid var(--color-border);
-  border-radius: 7px;
-  background: var(--color-surface);
+  padding: 10px 20px;
+  border: none;
+  border-radius: var(--radius-base);
+  background: var(--color-bg);
+  font-family: var(--font-display);
   font-size: 13px;
-  font-weight: 500;
+  font-weight: 600;
   cursor: pointer;
-  transition: background 0.12s;
+  transition: all var(--transition-base);
+  color: var(--color-foreground);
+  box-shadow: var(--shadow-extruded-sm);
 }
 
 .btn:hover {
-  background: var(--color-bg);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-extruded);
+}
+
+.btn:active {
+  transform: translateY(0.5px);
+  box-shadow: var(--shadow-inset-sm);
+}
+
+.btn:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
 }
 
 .btn.primary {
   background: var(--color-accent);
-  border-color: var(--color-accent);
   color: white;
+  box-shadow: 
+    5px 5px 10px rgb(163, 177, 198, 0.5),
+    -5px -5px 10px rgba(255, 255, 255, 0.4),
+    inset 2px 2px 4px rgba(255, 255, 255, 0.15),
+    inset -2px -2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .btn.primary:hover {
-  opacity: 0.9;
+  transform: translateY(-1px);
+  box-shadow: 
+    7px 7px 14px rgb(163, 177, 198, 0.6),
+    -7px -7px 14px rgba(255, 255, 255, 0.5),
+    inset 2px 2px 4px rgba(255, 255, 255, 0.2),
+    inset -2px -2px 4px rgba(0, 0, 0, 0.15);
+}
+
+.btn.primary:active {
+  transform: translateY(0.5px);
+  box-shadow: 
+    inset 4px 4px 8px rgba(0, 0, 0, 0.25),
+    inset -4px -4px 8px rgba(255, 255, 255, 0.15);
 }
