@@ -1,6 +1,6 @@
 import type { AppState } from '../types';
 
-const KEY = 'skadis-config';
+const KEY = 'pegboard-designer-config';
 
 export function saveState(state: AppState): void {
   try {
